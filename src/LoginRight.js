@@ -40,15 +40,52 @@ const LoginRight = () => {
     help: {
       verticalAlign: "bottom",
     },
+
+    wave: {
+      opacity: 0.8,
+      position: "absolute",
+      top: "75%",
+      left: "75%",
+
+      background: "#6fc3ff",
+
+      width: 800,
+      height: 800,
+      marginLeft: -250,
+      marginTop: -250,
+      transformOrigin: "50% 48%",
+      borderRadius: "43%",
+      animation: "drift 12000ms infinite linear",
+    },
+    // "@keyframes drift" {
+    //   to {
+    //     transform: "rotate(0deg)",
+    //   }
+    //   from {
+    //     transform: "rotate(360deg)",
+    //   }
+    // },
+    "& wave.-two": {
+      animation: "drift 16000ms infinite linear",
+      opacity: 0.5,
+      background: "#6fc3ff",
+    },
+    " & wave.-three": {
+      opacity: 0.7,
+      animation: "drift 20000ms infinite linear",
+    },
   });
 
   const classes = useStyles();
   return (
     <div>
       <div className={classes.loginright}>
-        <div className="wave -one"></div>
+        {/* <div className="wave -one"></div>
         <div className="wave -two"></div>
-        <div className="wave -three"></div>
+        <div className="wave -three"></div> */}
+        <div className={classes.wave}></div>
+        <div className={classes.wave[" & -two"]}></div>
+        <div className={classes["& wave.-three"]}></div>
 
         <div className={classes.righttxt1}>
           본 인사정보 시스템은 (주)월급날에서 제공합니다. <br />
