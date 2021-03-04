@@ -1,4 +1,3 @@
-// import "./Login.css";
 import help from "./img/help.png";
 import bgimg from "./img/bgimg.jpg";
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,9 +17,7 @@ const LoginRight = () => {
     position: absolute;
     top: 75%;
     left: 75%;
-
     background: #6fc3ff;
-
     width: 800px;
     height: 800px;
     margin-left: -250px;
@@ -33,13 +30,11 @@ const LoginRight = () => {
   const Wave2 = styled(Wave)`
     animation: ${Drift} 16000ms infinite linear;
     opacity: 0.5;
-    background: "#6fc3ff";
   `;
 
   const Wave3 = styled(Wave)`
     animation: ${Drift} 20000ms infinite linear;
-    opacity: 0.5;
-    background: "#6fc3ff";
+    opacity: 0.7;
   `;
   // "& wave.-two": {
   //   animation: "drift 16000ms infinite linear",
@@ -53,13 +48,9 @@ const LoginRight = () => {
 
   const useStyles = makeStyles({
     loginright: {
-      /* display: inline-block; */
       width: 600,
       height: 600,
       color: "#ffffff",
-
-      // eslint-disable-next-line no-undef
-      // backgroundImage: url("../src/img/bgimg.jpg"),
       backgroundImage: `url(${bgimg})`,
       overflow: "hidden",
       transform: "translate3d(0, 0, 0)",
@@ -95,14 +86,6 @@ const LoginRight = () => {
         <Wave />
         <Wave2 />
         <Wave3 />
-
-        {/* <div className="wave -one"></div>
-        <div className="wave -two"></div>
-        <div className="wave -three"></div> */}
-        {/* <div className={classes.wave}></div>
-        <div className={classes.wave[" & -two"]}></div>
-        <div className={classes["& wave.-three"]}></div> */}
-
         <div className={classes.righttxt1}>
           본 인사정보 시스템은 (주)월급날에서 제공합니다. <br />
           비정상적 접근 시 법적 조치를 받을 수 있습니다.

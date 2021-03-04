@@ -1,4 +1,3 @@
-// import "./Login.css";
 import React, { useEffect, useState } from "react";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
@@ -68,15 +67,16 @@ const LoginLeft = () => {
     loginleft: {
       width: 400,
       height: 600,
-
       backgroundColor: "#ffffff",
     },
     txtbox: {
       borderRadius: 10,
       border: 1,
       overflow: "hidden",
-      marginTop: 15,
+      marginTop: 12,
       // fontWeight: "bold",
+      backgroundColor: "#EDEDED 70%",
+      // opacity: 0.7,
     },
     content: {
       width: 270,
@@ -126,7 +126,6 @@ const LoginLeft = () => {
       setComId(localStorage.getItem("comid"));
       setId(localStorage.getItem("id"));
     }
-    console.log("isRemember===================", isRemember);
   }, []);
   // });
 
