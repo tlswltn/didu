@@ -1,10 +1,56 @@
 // import "./Login.css";
 import help from "./img/help.png";
 import bgimg from "./img/bgimg.jpg";
-import logo from "./img/logo.png";
 import { makeStyles } from "@material-ui/core/styles";
+import styled, { keyframes } from "styled-components";
 
 const LoginRight = () => {
+  const Drift = keyframes`
+  to {
+    transform: rotate(0deg);
+  }
+  from {
+    transform: rotate(360deg);
+  }
+  `;
+  const Wave = styled.div`
+    opacity: 0.8;
+    position: absolute;
+    top: 75%;
+    left: 75%;
+
+    background: #6fc3ff;
+
+    width: 800px;
+    height: 800px;
+    margin-left: -250px;
+    margin-top: -250px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: ${Drift} 12000ms infinite linear;
+  `;
+
+  const Wave2 = styled(Wave)`
+    animation: ${Drift} 16000ms infinite linear;
+    opacity: 0.5;
+    background: "#6fc3ff";
+  `;
+
+  const Wave3 = styled(Wave)`
+    animation: ${Drift} 20000ms infinite linear;
+    opacity: 0.5;
+    background: "#6fc3ff";
+  `;
+  // "& wave.-two": {
+  //   animation: "drift 16000ms infinite linear",
+  //   opacity: 0.5,
+  //   background: "#6fc3ff",
+  // },
+  // " & wave.-three": {
+  //   opacity: 0.7,
+  //   animation: "drift 20000ms infinite linear",
+  // },
+
   const useStyles = makeStyles({
     loginright: {
       /* display: inline-block; */
@@ -40,52 +86,22 @@ const LoginRight = () => {
     help: {
       verticalAlign: "bottom",
     },
-
-    wave: {
-      opacity: 0.8,
-      position: "absolute",
-      top: "75%",
-      left: "75%",
-
-      background: "#6fc3ff",
-
-      width: 800,
-      height: 800,
-      marginLeft: -250,
-      marginTop: -250,
-      transformOrigin: "50% 48%",
-      borderRadius: "43%",
-      animation: "drift 12000ms infinite linear",
-    },
-    // "@keyframes drift" {
-    //   to {
-    //     transform: "rotate(0deg)",
-    //   }
-    //   from {
-    //     transform: "rotate(360deg)",
-    //   }
-    // },
-    "& wave.-two": {
-      animation: "drift 16000ms infinite linear",
-      opacity: 0.5,
-      background: "#6fc3ff",
-    },
-    " & wave.-three": {
-      opacity: 0.7,
-      animation: "drift 20000ms infinite linear",
-    },
   });
 
   const classes = useStyles();
   return (
     <div>
       <div className={classes.loginright}>
+        <Wave />
+        <Wave2 />
+        <Wave3 />
+
         {/* <div className="wave -one"></div>
         <div className="wave -two"></div>
         <div className="wave -three"></div> */}
-        <div className={classes.wave}></div>
+        {/* <div className={classes.wave}></div>
         <div className={classes.wave[" & -two"]}></div>
-        <div className={classes["& wave.-three"]}></div>
+        <div className={classes["& wave.-three"]}></div> */}
 
         <div className={classes.righttxt1}>
           본 인사정보 시스템은 (주)월급날에서 제공합니다. <br />

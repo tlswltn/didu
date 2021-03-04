@@ -44,7 +44,7 @@ const LoginLeft = () => {
 
       boxShadow:
         "inset 0 0 0 1px rgba(16,22,26,.2), inset 0 -1px 0 rgba(16,22,26,.1)",
-      backgroundColor: "#f5f8fa",
+      // backgroundColor: "#f5f8fa",
     },
     checkedIcon: {
       backgroundColor: "#137cbd",
@@ -119,23 +119,21 @@ const LoginLeft = () => {
   const [isRemember, setIsRemember] = useState(false);
   const [id, setId] = useState("");
   const [comid, setComId] = useState("");
-  const [password, setPassword] = useState("");
 
   useEffect(() => {
     if (localStorage.getItem("isRemember")) {
       setIsRemember(true);
       setComId(localStorage.getItem("comid"));
       setId(localStorage.getItem("id"));
-      setPassword(localStorage.getItem("pass"));
     }
-    console.log("isRemember", isRemember);
+    console.log("isRemember===================", isRemember);
   }, []);
   // });
 
   const lcst = (key, value, isClear) => {
-    //console.log("key", key);
-    //console.log("value", value);
-    //console.log("isClear", isClear);
+    console.log("key", key);
+    console.log("value", value);
+    console.log("isClear", isClear);
 
     localStorage.setItem(key, value);
     if (isClear) localStorage.clear();
@@ -185,11 +183,6 @@ const LoginLeft = () => {
               size="small"
               label="비밀번호"
               variant="filled"
-              onChange={(e) => {
-                setPassword(e.target.value);
-                lcst("pass", e.target.value);
-              }}
-              value={password}
             />
           </div>
 
